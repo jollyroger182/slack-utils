@@ -11,7 +11,10 @@ const app = new App({
 })
 
 app.on(`/${COMMAND_PREFIX}id`, async (event) => {
-	const text = event.text.replace(/^\s*<(?:\!subteam\^|@|#)([0-9A-Z]+)(?:\|.*)?>\s*$/, (_, x) => x)
+	const text = (event.text.trim() || event.user_id).replace(
+		/^\s*<(?:\!subteam\^|@|#)([0-9A-Z]+)(?:\|.*)?>\s*$/,
+		(_, x) => x,
+	)
 	await event.respond.message({ ephemeral: true, text })
 })
 
