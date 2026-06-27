@@ -10,9 +10,7 @@ FROM oven/bun:latest
 WORKDIR /app
 
 COPY --from=builder /app /app
-COPY tsconfig.json drizzle.config.ts index.ts ./
-COPY drizzle ./drizzle
-COPY src ./src
+COPY tsconfig.json index.ts ./
 
 EXPOSE 8000
 
