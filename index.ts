@@ -1,6 +1,6 @@
 import { App } from 'slack.ts'
 
-const { BOT_TOKEN, SIGNING_SECRET, COMMAND_PREFIX = '', PORT = '3000' } = process.env
+const { BOT_TOKEN, SIGNING_SECRET, COMMAND_PREFIX = '', PORT = '8000' } = process.env
 if (!BOT_TOKEN || !SIGNING_SECRET) {
 	throw new Error('BOT_TOKEN or SIGNING_SECRET environment variable not set')
 }
